@@ -3,7 +3,7 @@ stages:
     cmd: python src/prepare.py
     deps:
       - src/prepare.py
-      - data/raw/iris.csv
+      - data/raw/titanic.csv
     params:
       - prepare
     outs:
@@ -11,6 +11,7 @@ stages:
       - data/processed/X_test.csv
       - data/processed/y_train.csv
       - data/processed/y_test.csv
+      - data/processed/metadata.json
   
   train:
     cmd: python src/train.py
@@ -24,5 +25,7 @@ stages:
       - train
     outs:
       - model.pkl
+      - confusion_matrix.png
+      - feature_importance.png
     metrics:
       - metrics.json

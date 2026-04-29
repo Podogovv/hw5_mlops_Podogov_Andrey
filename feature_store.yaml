@@ -1,0 +1,33 @@
+project: titanic_feature_store
+
+provider: postgres
+
+connection:
+host: localhost
+port: 5432
+database: features_db
+user: postgres
+password: postgres
+
+entities:
+
+name: passenger
+join_key: PassengerId
+
+feature_views:
+
+name: passenger_features
+entity: passenger
+table: passenger_features
+timestamp_col: event_timestamp
+
+features:
+
+name: age
+dtype: float
+name: fare
+dtype: float
+name: pclass
+dtype: int
+
+ttl: 86400

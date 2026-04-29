@@ -95,8 +95,8 @@ ________________________________________________
 ## Шаги для воспроизведения:
 
 1. Клонирование репозитория
-git clone <repo-url>
-cd mlops\_project
+git clone hw5_mlops_Podogov_Andrey hw5_mlops_Podogov_Andrey_test
+cd hw5_mlops_Podogov_Andrey_test
 
 2. Установка зависимостей:
 pip install -r requirements.txt

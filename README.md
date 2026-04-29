@@ -54,18 +54,21 @@ ________________________________________________
 ## Шаги для воспроизведения:
 
 1. Клонирование репозитория
-&#x20; git clone <repo-url>
-&#x20; cd mlops\_project
+git clone <repo-url>
+cd mlops\_project
 
 2. Установка зависимостей:
-&#x20;pip install -r requirements.txt
+pip install -r requirements.txt
 
 3. Получение данных:
-&#x20;dvc pull
+dvc pull
 
 4. Запуск пайплайна:
-&#x20;dvc repro
+dvc repro
 
-5. Просмотр метрик в MLflow:
-&#x20;mlflow ui --backend-store-uri sqlite:///mlflow.db
+5. Запуск MLflow UI для просмотра результатов
+mlflow ui --backend-store-uri sqlite:///mlflow.db
+
+6. Просмотр метрик
+cat metrics.json
 

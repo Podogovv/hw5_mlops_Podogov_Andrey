@@ -1,3 +1,33 @@
+Структура:
+
+
+
+├── data/
+
+│   ├── raw/
+
+│   │   └── iris.csv.dvc 
+
+│   └── processed/        
+
+├── src/
+
+│   ├── prepare.py        
+
+│   └── train.py          
+
+├── dvc.yaml             
+
+├── params.yaml          
+
+├── requirements.txt     
+
+└── README.md           
+
+
+
+
+
 Воспроизведение эксперимента.
 
 

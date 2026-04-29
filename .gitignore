@@ -1,0 +1,8 @@
+*.pkl
+*.db
+mlruns/
+data/raw/*.csv
+data/processed/
+__pycache__/
+*.pyc
+.DS_Store

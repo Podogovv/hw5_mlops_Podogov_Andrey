@@ -96,20 +96,21 @@ ________________________________________________
 
 1. Клонирование репозитория
 git clone hw5_mlops_Podogov_Andrey hw5_mlops_Podogov_Andrey_test
+
 cd hw5_mlops_Podogov_Andrey_test
 
-2. Установка зависимостей:
+3. Установка зависимостей:
 pip install -r requirements.txt
 
-3. Получение данных:
+4. Получение данных:
 dvc pull
 
-4. Запуск пайплайна:
+5. Запуск пайплайна:
 dvc repro
 
-5. Запуск MLflow UI для просмотра результатов
+6. Запуск MLflow UI для просмотра результатов
 mlflow ui --backend-store-uri sqlite:///mlflow.db
 
-6. Просмотр метрик
+7. Просмотр метрик
 cat metrics.json
 

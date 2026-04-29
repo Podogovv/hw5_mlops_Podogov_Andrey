@@ -51,21 +51,72 @@ ________________________________________________
 
 \- DVC
 ________________________________________________
+## Краткое описание пайплайна
+**Стадия 1: Подготовка данных (prepare)**
+
+Вход: data/raw/titanic.csv (сырые данные)
+
+Действия:
+
+\- Удаление неинформативных признаков 
+
+\- Заполнение пропусков в возрасте 
+
+\- Заполнение пропусков в порте посадки модой
+
+\- Создание новых признаков
+
+\- Кодирование категориальных признаков 
+
+\- Стандартизация числовых признаков (Age, Fare, SibSp, Parch, FamilySize)
+
+\- Разделение на train/test
+
+Выход: data/processed/X_train.csv, X_test.csv, y_train.csv, y_test.csv, metadata.json
+
+**Стадия 2: Обучение модели (train)**
+
+Вход: Подготовленные данные из data/processed/
+
+Действия:
+
+\- Загрузка гиперпараметров из params.yaml
+
+\- Обучение модели 
+
+\- Расчет метрик
+
+\- Логирование всего в MLflow 
+
+\- Сохранение модели в model.pkl
+
+Выход: model.pkl, metrics.json, confusion_matrix.png, feature_importance.png
+________________________________________________
 ## Шаги для воспроизведения:
 
-1. Клонирование репозитория
-&#x20; git clone <repo-url>
-&#x20; cd mlops\_project
+**1. Клонирование репозитория**
 
-2. Установка зависимостей:
-&#x20;pip install -r requirements.txt
+git clone hw5_mlops_Podogov_Andrey hw5_mlops_Podogov_Andrey_test
 
-3. Получение данных:
-&#x20;dvc pull
+cd hw5_mlops_Podogov_Andrey_test
 
-4. Запуск пайплайна:
-&#x20;dvc repro
+**2. Установка зависимостей**
 
-5. Просмотр метрик в MLflow:
-&#x20;mlflow ui --backend-store-uri sqlite:///mlflow.db
+pip install -r requirements.txt
+
+**3. Получение данных**
+
+dvc pull
+
+**4. Запуск пайплайна**
+
+dvc repro
+
+**5. Запуск MLflow UI для просмотра результатов**
+
+mlflow ui --backend-store-uri sqlite:///mlflow.db
+
+**6. Просмотр метрик**
+
+cat metrics.json
 

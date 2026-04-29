@@ -95,20 +95,25 @@ ________________________________________________
 ## Шаги для воспроизведения:
 
 1. Клонирование репозитория
+
 git clone hw5_mlops_Podogov_Andrey hw5_mlops_Podogov_Andrey_test
 
 cd hw5_mlops_Podogov_Andrey_test
 
 3. Установка зависимостей:
+
 pip install -r requirements.txt
 
 4. Получение данных:
+
 dvc pull
 
 5. Запуск пайплайна:
+
 dvc repro
 
 6. Запуск MLflow UI для просмотра результатов
+
 mlflow ui --backend-store-uri sqlite:///mlflow.db
 
 7. Просмотр метрик
